@@ -4,7 +4,7 @@ const courseSchema = new mongoose.Schema({
   name: String,
   price: String,
   subtitle: String,
-  releaseYear: String,
+  releaseYear: Number,
 });
 
 module.exports = mongoose.model("Course", courseSchema);

@@ -1,5 +1,8 @@
 const fastify = require("fastify")({ logger: true });
 
+// routes
+const routes = require("./routes");
+
 // db
 const mongoose = require("mongoose");
 
@@ -12,6 +15,10 @@ mongoose
 // routes
 fastify.get("/", async (request, reply) => {
   return { visitor: "Shubham Lad" };
+});
+
+routes.forEach((route, index) => {
+  fastify.route(route);
 });
 
 // starting server
