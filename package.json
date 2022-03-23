@@ -1,0 +1,21 @@
+{
+  "name": "fastify-try",
+  "version": "1.0.0",
+  "description": "get's my hands dirty with Fastify",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js"
+  },
+  "repository": "https://github.com/ShuLaPy/fastify-try",
+  "author": "Shubham Lad",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "fastify": "^3.27.4",
+    "mongoose": "^6.2.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
