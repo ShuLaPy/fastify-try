@@ -1,31 +1,10 @@
 const courseController = require("../controllers/course.contrller");
 
-const routes = [
-  {
-    method: "GET",
-    url: "/api/course",
-    handler: courseController.getCourse,
-  },
-  {
-    method: "GET",
-    url: "/api/course/:id",
-    handler: courseController.getCourseById,
-  },
-  {
-    method: "POST",
-    url: "/api/course",
-    handler: courseController.addNewCourse,
-  },
-  {
-    method: "PUT",
-    url: "/api/course/:id",
-    handler: courseController.updateCourse,
-  },
-  {
-    method: "DELETE",
-    url: "/api/course/:id",
-    handler: courseController.deleteCourse,
-  },
-];
-
-module.exports = routes;
+module.exports = function (fastify, opts, done) {
+  fastify.get("/course", courseController.getCourse);
+  fastify.get("/course/:id", courseController.getCourseById);
+  fastify.post("/course", courseController.addNewCourse);
+  fastify.put("/course/:id", courseController.updateCourse);
+  fastify.delete("/course/:id", courseController.deleteCourse);
+  done();
+};

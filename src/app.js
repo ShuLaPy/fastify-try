@@ -17,9 +17,7 @@ fastify.get("/", async (request, reply) => {
   return { visitor: "Shubham Lad" };
 });
 
-routes.forEach((route, index) => {
-  fastify.route(route);
-});
+fastify.register(routes, { prefix: "/api" });
 
 // starting server
 const start = async () => {
